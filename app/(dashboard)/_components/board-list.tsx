@@ -38,33 +38,13 @@ const BoardList = ({ orgId, query }: BoardListProps) => {
   if (!data?.length && query.search) {
     return <EmptySearch />;
   }
-  if (data?.length) {
-    //!data?.length && query.favorites
 
-    return (
-      <>
-        <p>{query.favorites && "favorite"}</p>
-        <p>hi</p>
-        <p>hi</p>
-        <p>{query.search}</p>
-        <p>{data?.length}</p>
-        <EmptyFavorites />
-      </>
-    );
+  if (!data?.length && query.favorites) {
+    return <EmptyFavorites />;
   }
+
   if (!data?.length) {
-    return (
-      <>
-        <p>{query.favorites && "favorite"}</p>
-        <p>hi</p>
-        <p>{query.search}</p>
-        <p>hi</p>
-        <p>
-          {data?.length}
-        </p>
-        <EmptyBoards />
-      </>
-    );
+    return <EmptyBoards />;
   }
 
   return (
