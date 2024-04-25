@@ -16,7 +16,7 @@ interface BoardListProps {
 }
 
 const BoardList = ({ orgId, query }: BoardListProps) => {
-  const data = useQuery(api.boards.get, { orgId,...query });
+  const data = useQuery(api.boards.get, { orgId, ...query });
 
   if (data === undefined) {
     return (
@@ -38,11 +38,27 @@ const BoardList = ({ orgId, query }: BoardListProps) => {
   if (!data?.length && query.search) {
     return <EmptySearch />;
   }
-  if (data?.length) {//data?.length && query.favorites
-    return <EmptyFavorites />;
+  if (data?.length) {
+    //!data?.length && query.favorites
+
+    return (
+      <>
+        <p>{query.favorites}</p>
+        <p>{data?.length}</p>
+        <EmptyFavorites />
+      </>
+    );
   }
   if (!data?.length) {
-    return <EmptyBoards />;
+    return (
+      <>
+        <p>{query.favorites}</p>
+        <p>
+          {data?.length}
+        </p>
+        <EmptyBoards />
+      </>
+    );
   }
 
   return (
