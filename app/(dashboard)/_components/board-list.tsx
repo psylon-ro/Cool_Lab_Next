@@ -58,6 +58,7 @@ const BoardList = ({ orgId, query }: BoardListProps) => {
         <p>{query.favorites && "favorite"}</p>
         <p>hi</p>
         <p>{query.search}</p>
+        <p>hi</p>
         <p>
           {data?.length}
         </p>
