@@ -35,10 +35,10 @@ const BoardList = ({ orgId, query }: BoardListProps) => {
     );
   }
 
-  if (query.search) {//!data?.length && query.search
+  if (!data?.length && query.search) {
     return <EmptySearch />;
   }
-  if (query.favorites) {//!data?.length && query.favorites
+  if (data?.length) {//data?.length && query.favorites
     return <EmptyFavorites />;
   }
   if (!data?.length) {
