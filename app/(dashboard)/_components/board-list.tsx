@@ -44,6 +44,7 @@ const BoardList = ({ orgId, query }: BoardListProps) => {
     return (
       <>
         <p>{query.favorites && "favorite"}</p>
+        <p>hi</p>
         <p>{data?.length}</p>
         <EmptyFavorites />
       </>
@@ -53,6 +54,7 @@ const BoardList = ({ orgId, query }: BoardListProps) => {
     return (
       <>
         <p>{query.favorites && "favorite"}</p>
+        <p>hi</p>
         <p>
           {data?.length}
         </p>
